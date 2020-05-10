@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody&display=swap');
+
+body {
+    margin: 0;
+    font-family: Noto Sans KR;
+    font-size: 1em;
+}
+
+div#header {
+    padding: 1em;
+    background-color: #99F;
+}
+
+div#content {
+    padding: 1em 2em;
+}
+
+div#page_wrapper {
+    width: 40em;
+    padding-top: 0.2em;
+    font-family: Coming Soon, Hi Melody;
+    font-size : 1.5em;
+    color: #333;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    outline: None;
+
+    background-image:
+        linear-gradient(to top, #333 1px, transparent 1px);
+    background-size: 100% 2.5em;
+}
