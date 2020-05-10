@@ -5,44 +5,68 @@
 <title>Untitled</title>
 <style>
 
-@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand");
-@import url('https://fonts.googleapis.com/css2?family=Coming+Soon');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody&display=swap');
 
 body {
-    margin: 10px;
+    margin: 0;
+    font-family: Noto Sans KR;
+    font-size: 18px;
 }
 
-div#page {
+div#header {
+    padding: 15px;
+    background-color: #99F;
+}
+
+div#content {
+    padding: 20px 40px;
+}
+
+div#page_wrapper {
     outline: None;
-    border: 2px solid #333;
-    padding: 30px 40px;
-    font-family: Patrick Hand;
-    font-size : 35px;
+    padding-top: 10px;
+    font-family: Coming Soon, Hi Melody;
+    font-size : 30px;
     color: #333;
-    letter-spacing: 2px;
-    line-height: 50px;
+    letter-spacing: 3px;
+    line-height: 65px;
+
+    background-image:
+        linear-gradient(to top, #333 1px, transparent 1px);
+    background-size: 100% 65px;
 }
 
-div#page > div {
+/*
+div#page_wrapper > div {
     border-bottom: 2px dashed #333;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
 }
+*/
 
 </style>
 </head>
 <body>
 
-<div id="page_wrapper">
-<div id="page" contenteditable="true" spellcheck="false">
+<div id="header">Header 헤더</div>
+
+<div id="content">
+
+<div id="page_wrapper" contenteditable="true" spellcheck="false">
 <div>Title:</div>
 <div>Date:</div>
-<div><br></div>
-<div><br></div>
-<div><br></div>
-<div><br></div>
-<div><br></div>
-<div><br></div>
-</div>
-</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Hello, 가나다라 마바사 아자차카 타파하.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+<div>Once upon a time, there lived a girl called Cinderella.</div>
+
+</div> <!-- // page_wrapper -->
+
+</div> <!-- // content -->
 </body>
 </html>
