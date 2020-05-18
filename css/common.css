@@ -9,48 +9,56 @@ body {
 }
 
 div#header {
-    background-color: #E36;
     padding: 1em;
+    background-color: #E36;
     color: #FFF;
 }
 
 div#content {
+    padding: 2em;
     background-image: url("../img/content.bg.jpg");
     /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
-    background-repeat: repeat;
-    padding: 2em;
 }
 
 div#page_wrapper {
     width: 50em;
-    background-color: #FFE;
-    box-shadow: 0 0 5px #333;
     padding: 0.7em 2em 1.7em;
+    box-shadow: 0 0 4px #333;
+    background-color: #FFE;
 }
 
 div#page {
+    padding-top: 0.3em;
     background-image: linear-gradient(to top, #333 1px, transparent 1px);
     background-size: 100% 2.5em;
-    padding-top: 0.3em;
-    color: #333;
     font-family: Coming Soon, Hi Melody;
     font-size : 1.3em;
+    color: #333;
     letter-spacing: 0.1em;
     line-height: 2.5em;
     outline: None;
 }
 
-div#balloon {
-  position: fixed;
-  right: 2em;
-  bottom: 15em;
-  background-color: #d0eeff;
-  border-radius: 1em;
-  box-shadow: 0 0 5px #333;
-  padding: 20px;
-  width: 200px;
-  height: 150px;
+div#bubble {
+    position: fixed;
+    right: 2em;
+    bottom: 16em;
+    padding: 1em;
+    border-radius: 1em;
+    box-shadow: 0 0 4px #333;
+    background-color: #EEF;
 }
+
+div#bubble::after {
+    position: absolute;
+    right: 3em;
+    bottom: -2em;
+    border: 1em solid #EEF;
+    box-shadow: -2px 2px 2px #999;
+    content: "";
+    transform-origin: 0 0;
+    transform: rotate(-45deg);
+  }
 
 img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
     position: fixed;
