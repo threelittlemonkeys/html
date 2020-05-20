@@ -49,7 +49,7 @@ div#page {
     padding-top: 0.3em;
 }
 
-div#bubble {
+div#bubble_wrapper {
     background-color: #EEF;
     border-radius: 1em;
     bottom: 16em;
@@ -61,7 +61,7 @@ div#bubble {
     width: 16em;
 }
 
-div#bubble::after {
+div#bubble_wrapper::after {
     border: 1em solid #EEF;
     bottom: -2em;
     box-shadow: -2px 2px 2px #999;
@@ -70,6 +70,11 @@ div#bubble::after {
     right: 4em;
     transform: rotate(-45deg);
     transform-origin: 0 0;
+}
+
+div#bubble {
+    height: 10em;
+    overflow-y: scroll;
 }
 
 img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
