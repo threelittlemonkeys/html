@@ -3,65 +3,77 @@
 @import url("https://fonts.googleapis.com/css?family=Hi+Melody&display=swap");
 
 body {
-    margin: 0;
     font-family: Noto Sans KR;
     font-size: 1em;
+    margin: 0;
+    padding: 0;
 }
 
 div#header {
-    padding: 1em;
     background-color: #E36;
     color: #FFF;
+    padding: 1em;
+}
+
+div#content_wrapper {
+    background-image: url("../img/content.bg.jpg");
+    /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
+    overflow: hidden;
+    padding: 2em;
 }
 
 div#content {
-    padding: 2em;
-    background-image: url("../img/content.bg.jpg");
-    /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
+    display: inline-block;
+    width: 70em;
 }
 
 div#page_wrapper {
-    width: 50em;
-    padding: 0.7em 2em 1.7em;
-    box-shadow: 0 0 4px #333;
     background-color: #FFE;
+    box-shadow: 0 0 4px #333;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0.7em 2em 1.7em;
+    width: 50em;
 }
 
 div#page {
-    padding-top: 0.3em;
     background-image: linear-gradient(to top, #333 1px, transparent 1px);
     background-size: 100% 2.5em;
+    color: #333;
     font-family: Coming Soon, Hi Melody;
     font-size : 1.3em;
-    color: #333;
     letter-spacing: 0.1em;
     line-height: 2.5em;
+    min-height: 37.5em; /* 15 lines */
     outline: None;
+    padding-top: 0.3em;
 }
 
 div#bubble {
-    position: fixed;
-    right: 2em;
-    bottom: 16em;
-    padding: 1em;
-    border-radius: 1em;
-    box-shadow: 0 0 4px #333;
     background-color: #EEF;
+    border-radius: 1em;
+    bottom: 16em;
+    box-shadow: 0 0 4px #333;
+    box-sizing: border-box;
+    left: 54em; /* 2em + 50em + 2em */
+    padding: 1em;
+    position: fixed;
+    width: 16em;
 }
 
 div#bubble::after {
-    position: absolute;
-    right: 3em;
-    bottom: -2em;
     border: 1em solid #EEF;
+    bottom: -2em;
     box-shadow: -2px 2px 2px #999;
     content: "";
-    transform-origin: 0 0;
+    position: absolute;
+    right: 4em;
     transform: rotate(-45deg);
-  }
+    transform-origin: 0 0;
+}
 
 img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
-    position: fixed;
-    right: 2em;
     bottom: 2em;
+    left: 62em; /* 2em + 50em + 2em + 8em */
+    position: fixed;
 }
