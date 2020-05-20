@@ -50,18 +50,33 @@ div#page {
 }
 
 div#bubble_wrapper {
-    background-color: #EEF;
-    border-radius: 1em;
     bottom: 16em;
-    box-shadow: 0 0 4px #333;
     box-sizing: border-box;
     left: 54em; /* 2em + 50em + 2em */
-    padding: 1em;
     position: fixed;
     width: 16em;
 }
 
-div#bubble_wrapper::after {
+div#bubble {
+    overflow-y: scroll;
+}
+
+img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
+    bottom: 2em;
+    left: 62.25em; /* 2em + 50em + 2em + 8.25em */
+    position: fixed;
+}
+
+.bubble {
+    background-color: #EEF;
+    border-radius: 1em;
+    box-shadow: 0 0 4px #333;
+    display: inline-block;
+    padding: 1em;
+    position: relative;
+}
+
+.bubble::after {
     border: 1em solid #EEF;
     bottom: -2em;
     box-shadow: -2px 2px 2px #999;
@@ -70,15 +85,4 @@ div#bubble_wrapper::after {
     right: 4em;
     transform: rotate(-45deg);
     transform-origin: 0 0;
-}
-
-div#bubble {
-    height: 10em;
-    overflow-y: scroll;
-}
-
-img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
-    bottom: 2em;
-    left: 62em; /* 2em + 50em + 2em + 8em */
-    position: fixed;
 }
