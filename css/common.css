@@ -71,10 +71,11 @@ div#bubble::-webkit-scrollbar { width: 1em; }
 div#bubble::-webkit-scrollbar-thumb { background-color: #DCD; }
 div#bubble::-webkit-scrollbar-track { background-color: #EDE; }
 
-img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
+img#agent {
     float: right;
-    right: 0.85em;
+    right: 0.5em;
     position: relative;
+    /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
 }
 
 .bubble {
