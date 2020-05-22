@@ -49,26 +49,36 @@ div#page {
     padding-top: 0.3em;
 }
 
-div#bubble_wrapper {
-    bottom: 16em;
-    box-sizing: border-box;
+div#sidebar {
+    bottom: 2em;
     left: 54em; /* 2em + 50em + 2em */
     position: fixed;
     width: 16em;
 }
 
-div#bubble {
-    overflow-y: scroll;
+div#bubble_wrapper {
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 2.5em;
 }
 
+div#bubble {
+    max-height: 20em;
+    overflow-y: auto;
+}
+
+div#bubble::-webkit-scrollbar { width: 1em; }
+div#bubble::-webkit-scrollbar-thumb { background-color: #DCD; }
+div#bubble::-webkit-scrollbar-track { background-color: #EDE; }
+
 img#agent { /* https://www.freepik.com/free-vector/hand-drawn-robot-character-collection_1511346.htm */
-    bottom: 2em;
-    left: 62.25em; /* 2em + 50em + 2em + 8.25em */
-    position: fixed;
+    float: right;
+    right: 0.85em;
+    position: relative;
 }
 
 .bubble {
-    background-color: #EEF;
+    background-color: #FEF;
     border-radius: 1em;
     box-shadow: 0 0 4px #333;
     display: inline-block;
