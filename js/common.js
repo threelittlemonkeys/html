@@ -1,5 +1,5 @@
 window.onresize = function() {
-    console.log("resize");
+    console.log(document.documentElement.clientHeight);
 };
 
 // http://www.nextree.co.kr/p4150/

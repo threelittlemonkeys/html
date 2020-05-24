@@ -12,6 +12,7 @@ body {
 div#header {
     background-color: #E36;
     color: #FFF;
+    line-height: 100%;
     padding: 1em;
 }
 
@@ -36,7 +37,21 @@ div#page_wrapper {
     width: 50em;
 }
 
-div#page {
+div#page_title {
+    margin-bottom: -0.3em;
+    min-height: 2.5em;
+}
+
+div#page_date {
+    margin-bottom: -0.3em;
+    min-height: 2.5em;
+}
+
+div#page_text {
+    min-height: 25em; /* 10 lines */
+}
+
+.page {
     background-image: linear-gradient(to top, #333 1px, transparent 1px);
     background-size: 100% 2.5em;
     color: #333;
@@ -44,7 +59,6 @@ div#page {
     font-size : 1.3em;
     letter-spacing: 0.1em;
     line-height: 2.5em;
-    min-height: 37.5em; /* 15 lines */
     outline: None;
     padding-top: 0.3em;
 }
@@ -57,13 +71,12 @@ div#sidebar {
 }
 
 div#bubble_wrapper {
-    box-sizing: border-box;
-    display: block;
     margin-bottom: 2.5em;
 }
 
-div#bubble {
-    max-height: 20em;
+div#bubble_text {
+    line-height: 150%;
+    max-height: 15em;
     overflow-y: auto;
 }
 
@@ -84,12 +97,12 @@ div#agent {
 
 #agent_eyes {
     transform-origin: 40px 46px;
-    animation: blink 5s infinite;
+    animation: agent_eyes_blink 3s infinite;
 }
 
-@keyframes blink {
+@keyframes agent_eyes_blink {
     from { transform: scaleY(0); }
-    10%,
+    5%,
     to { transform: scaleY(1); }
 }
 
@@ -103,12 +116,12 @@ div#agent {
 }
 
 .bubble::after {
-    border: 1em solid #EEF;
-    bottom: -2em;
+    border: 0.7em solid #EEF;
+    bottom: -1.4em;
     box-shadow: -2px 2px 2px #999;
     content: "";
     position: absolute;
-    right: 3.5em;
+    right: 3.8em;
     transform: rotate(-45deg);
     transform-origin: 0 0;
 }
