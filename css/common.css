@@ -83,7 +83,7 @@ div#bubble_wrapper {
 
 div#bubble_text {
     line-height: 150%;
-    max-height: 20em;
+    max-height: 15em;
     overflow-y: auto;
 }
 

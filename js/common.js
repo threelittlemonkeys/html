@@ -1,12 +1,11 @@
-window.addEventListener("load", resize);
-window.addEventListener("resize", resize);
+window.addEventListener("load", sidebar_reposition);
+window.addEventListener("resize", sidebar_reposition);
 
-function resize() {
-    e = document.getElementById("sidebar")
-    if (e.offsetTop < 80) {
+function sidebar_reposition() {
+    e = document.getElementById("sidebar");
+    if (document.body.clientHeight < e.clientHeight + 112) {
         e.style.top = "5em";
         e.style.bottom = "";
-        console.log(e.offsetTop);
     } else {
         e.style.top = "";
         e.style.bottom = "2em";
