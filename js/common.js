@@ -1,3 +1,5 @@
+var PAGE_TEXT = "";
+
 window.addEventListener("load", sidebar_reposition);
 window.addEventListener("resize", sidebar_reposition);
 
@@ -13,7 +15,12 @@ function sidebar_reposition() {
     }
 }
 
-function model1(e) {
+function model1(el, ev) {
+    if (PAGE_TEXT == el.innerHTML)
+        return;
+    PAGE_TEXT = el.innerHTML;
+    console.log(el.innerHTML);
+    return;
     var x = document.createElement("span");
     x.id = "test";
     window.getSelection().getRangeAt(0).insertNode(x);
@@ -27,7 +34,6 @@ function model1(e) {
     selection.removeAllRanges();
     selection.addRange(range);
     range.deleteContents();
-    console.log(e.innerHTML);
 }
 
 /*
