@@ -1,3 +1,5 @@
+var PAGE_TITLE = "";
+var PAGE_DATE = "";
 var PAGE_TEXT = "";
 
 aEL(window, "load", sidebar_reposition);
@@ -23,12 +25,10 @@ function model1(e) {
     if (PAGE_TEXT == e.innerHTML)
         return;
     p = window.getSelection().focusOffset - 1;
-    w = e.innerText.charAt(p);
-    return;
+    w = e.innerText.charCodeAt(p)
+    if (0x3131 <= w && w <= 0x3163 || 0xAC00 <= w && w <= 0xD7A3)
+        return;
     PAGE_TEXT = e.innerHTML;
-    console.log(p);
-    console.log(e.innerText.charAt(p));
-    return;
 
     var cc = document.createElement("span");
     cc.id = "test";
