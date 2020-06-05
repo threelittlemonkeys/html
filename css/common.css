@@ -38,11 +38,23 @@ div#content {
 
 div#page_wrapper {
     background-color: #FFE;
-    box-shadow: 0 0 4px #333;
+    box-shadow: 0 0 4px #000;
     box-sizing: border-box;
     display: inline-block;
     padding: 0.7em 2em 1.7em;
     width: 50em;
+}
+
+.page {
+    background-image: linear-gradient(to top, #000 1px, transparent 1px);
+    background-size: 100% 2.5em;
+    color: #000;
+    font-family: Coming Soon, Hi Melody;
+    font-size : 1.3em;
+    letter-spacing: 0.1em;
+    line-height: 2.5em;
+    outline: None;
+    padding-top: 0.3em;
 }
 
 div#page_title {
@@ -57,18 +69,6 @@ div#page_date {
 
 div#page_text {
     min-height: 25em; /* 10 lines */
-}
-
-.page {
-    background-image: linear-gradient(to top, #333 1px, transparent 1px);
-    background-size: 100% 2.5em;
-    color: #333;
-    font-family: Coming Soon, Hi Melody;
-    font-size : 1.3em;
-    letter-spacing: 0.1em;
-    line-height: 2.5em;
-    outline: None;
-    padding-top: 0.3em;
 }
 
 div#sidebar {
@@ -116,7 +116,7 @@ div#agent {
 .bubble {
     background-color: #FEF;
     border-radius: 1em;
-    box-shadow: 0 0 4px #333;
+    box-shadow: 0 0 4px #000;
     display: inline-block;
     padding: 1em;
     position: relative;
@@ -131,4 +131,10 @@ div#agent {
     right: 3.8em;
     transform: rotate(-45deg);
     transform-origin: 0 0;
+}
+
+.highlight {
+    background-color: #FF0;
+    border-radius: 0.5em;
+    padding-top: 0.3em;
 }

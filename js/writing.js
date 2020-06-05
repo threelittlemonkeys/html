@@ -6,7 +6,7 @@ aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
 aEL(document, "DOMContentLoaded", () => {
-    setInterval(() => model1(gEBI("page_text")), 1000);
+    setInterval(() => model1(gEBI("page_text")), 2000);
 });
 
 function sidebar_reposition() {
@@ -22,27 +22,31 @@ function sidebar_reposition() {
 }
 
 function model1(e) {
-    if (PAGE_TEXT == e.innerHTML)
+    if (PAGE_TEXT == e.innerText)
         return;
     p = window.getSelection().focusOffset - 1;
     w = e.innerText.charCodeAt(p)
-    if (0x3131 <= w && w <= 0x3163 || 0xAC00 <= w && w <= 0xD7A3)
+    if (0x3131 <= w && w <= 0x3163)
         return;
-    PAGE_TEXT = e.innerHTML;
+    if (0xAC00 <= w && w <= 0xD7A3)
+        return;
+    PAGE_TEXT = e.innerText;
 
-    var cc = document.createElement("span");
-    cc.id = "test";
-    window.getSelection().getRangeAt(0).insertNode(cc);
-    e.blur();
-    e.innerHTML = e.innerHTML.replace("abc", "xxx");
-    e.focus();
+    var caret = document.createElement("span");
+    caret.id = "caret";
+    window.getSelection().getRangeAt(0).insertNode(caret);
+
+    e.innerHTML = e.innerHTML.replace(/(?<!>)(abc)(?!<)/, "<span class='highlight'>$1</span>");
+
     var range = document.createRange();
-    cc = gEBI("test");
-    range.selectNode(cc);
+    caret = gEBI("caret");
+    range.selectNode(caret);
     var selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
     range.deleteContents();
+
+    console.log(PAGE_TEXT);
 }
 
 /*
