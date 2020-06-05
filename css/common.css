@@ -102,9 +102,9 @@ div#agent {
     width: 111px;
 }
 
-#agent_eyes {
-    transform-origin: 40px 46px;
+svg#agent_eyes {
     animation: agent_eyes_blink 3s infinite;
+    transform-origin: 40px 46px;
 }
 
 @keyframes agent_eyes_blink {
@@ -134,6 +134,7 @@ div#agent {
 }
 
 .highlight {
+    animation: highlight_fadein 2s 1;
     background-color: #FF0;
     border-radius: 0.5em;
     padding-top: 0.3em;

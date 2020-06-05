@@ -6,11 +6,11 @@ aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
 aEL(document, "DOMContentLoaded", () => {
-    setInterval(() => model1(gEBI("page_text")), 2000);
+    setInterval(() => oninput(gEBI("page_text")), 2000);
 });
 
 function sidebar_reposition() {
-    var e = gEBI("sidebar");
+    let e = gEBI("sidebar");
     // 3 + 2 + 2 = 7em = 112px
     if (document.body.clientHeight < e.clientHeight + 112) {
         e.style.top = "5em";
@@ -21,32 +21,36 @@ function sidebar_reposition() {
     }
 }
 
-function model1(e) {
+function oninput(e) {
     if (PAGE_TEXT == e.innerText)
         return;
-    p = window.getSelection().focusOffset - 1;
-    w = e.innerText.charCodeAt(p)
+    let p = window.getSelection().focusOffset - 1;
+    let w = e.innerText.charCodeAt(p)
     if (0x3131 <= w && w <= 0x3163)
         return;
     if (0xAC00 <= w && w <= 0xD7A3)
         return;
-    PAGE_TEXT = e.innerText;
 
-    var caret = document.createElement("span");
-    caret.id = "caret";
+    let caret = document.createTextNode("__CARET__");
     window.getSelection().getRangeAt(0).insertNode(caret);
 
-    e.innerHTML = e.innerHTML.replace(/(?<!>)(abc)(?!<)/, "<span class='highlight'>$1</span>");
-
-    var range = document.createRange();
-    caret = gEBI("caret");
+    let text = model1(e.innerText);
+    let range = document.createRange();
+    e.innerHTML = text;
+    caret = gEBI("__CARET__");
     range.selectNode(caret);
-    var selection = window.getSelection();
+    let selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
     range.deleteContents();
 
-    console.log(PAGE_TEXT);
+    PAGE_TEXT = e.innerText;
+}
+
+function model1(text) {
+    text = text.replace(/(abc)/g, "<span class='highlight'>$1</span>");
+    text = text.replace("__CARET__", "<span id='__CARET__'></span>");
+    return text;
 }
 
 /*
