@@ -6,7 +6,8 @@ aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
 aEL(document, "DOMContentLoaded", () => {
-    setInterval(() => oninput(gEBI("page_text")), 2000);
+    // setInterval(() => oninput(gEBI("page_text")), 1000);
+    aEL(gEBI("page_text"), "keyup", () => oninput(gEBI("page_text")));
 });
 
 function sidebar_reposition() {
@@ -24,15 +25,15 @@ function sidebar_reposition() {
 function oninput(e) {
     if (PAGE_TEXT == e.innerText)
         return;
-    let p = window.getSelection().focusOffset - 1;
-    let w = e.innerText.charCodeAt(p)
-    if (0x3131 <= w && w <= 0x3163)
+    let chr = (window.getSelection().focusNode.nodeValue || "").slice(-1).charCodeAt(0);
+    if (0x3131 <= chr && chr <= 0x3163)
         return;
-    if (0xAC00 <= w && w <= 0xD7A3)
+    if (0xAC00 <= chr && chr <= 0xD7A3)
         return;
 
     let caret = document.createTextNode("__CARET__");
     window.getSelection().getRangeAt(0).insertNode(caret);
+    let pos = e.innerText.indexOf("__CARET__");
 
     let text = model1(e.innerText);
     let range = document.createRange();
@@ -48,6 +49,7 @@ function oninput(e) {
 }
 
 function model1(text) {
+    // text = text.replace("__CARET__", "");
     text = text.replace(/(abc)/g, "<span class='highlight'>$1</span>");
     text = text.replace("__CARET__", "<span id='__CARET__'></span>");
     return text;
