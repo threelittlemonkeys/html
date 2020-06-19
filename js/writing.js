@@ -11,7 +11,7 @@ aEL(document, "DOMContentLoaded", () => {
 });
 
 function sidebar_reposition() {
-    let e = gEBI("sidebar");
+    var e = gEBI("sidebar");
     // 3 + 2 + 2 = 7em = 112px
     if (document.body.clientHeight < e.clientHeight + 112) {
         e.style.top = "5em";
@@ -25,22 +25,21 @@ function sidebar_reposition() {
 function oninput(e) {
     if (PAGE_TEXT == e.innerText)
         return;
-    let chr = (window.getSelection().focusNode.nodeValue || "").slice(-1).charCodeAt(0);
+    var chr = (window.getSelection().focusNode.nodeValue || "").slice(-1).charCodeAt(0);
     if (0x3131 <= chr && chr <= 0x3163)
         return;
     if (0xAC00 <= chr && chr <= 0xD7A3)
         return;
 
-    let caret = document.createTextNode("__CARET__");
+    var caret = document.createTextNode("__CARET__");
     window.getSelection().getRangeAt(0).insertNode(caret);
-    let pos = e.innerText.indexOf("__CARET__");
 
-    let text = model1(e.innerText);
-    let range = document.createRange();
+    var text = model1(e.innerText);
+    var range = document.createRange();
     e.innerHTML = text;
     caret = gEBI("__CARET__");
     range.selectNode(caret);
-    let selection = window.getSelection();
+    var selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
     range.deleteContents();
@@ -49,8 +48,23 @@ function oninput(e) {
 }
 
 function model1(text) {
-    // text = text.replace("__CARET__", "");
-    text = text.replace(/(abc)/g, "<span class='highlight'>$1</span>");
+    var words = text.split(" ");
+    for (let i = 0; i < words.length; i++) {
+        let word = words[i];
+        let tag = false;
+        let pos = word.indexOf("__CARET__");
+        if (pos != -1)
+            word = word.replace("__CARET__", "");
+        if (word == "abc")
+            tag = true;
+        if (pos != -1)
+            word = word.slice(0, pos) + "__CARET__" + word.slice(pos);
+        if (tag)
+            word = "<span class='highlight'>" + word + "</span>";
+        if (word != words[i])
+            words[i] = word;
+    }
+    text = words.join(" ");
     text = text.replace("__CARET__", "<span id='__CARET__'></span>");
     return text;
 }
