@@ -2,18 +2,20 @@ var PAGE_TITLE = "";
 var PAGE_DATE = "";
 var PAGE_TEXT = "";
 
+var DICT = Array();
+DICT = {"abc": undefined, "abcdef": undefined}; // TODO
+
 aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
 aEL(document, "DOMContentLoaded", () => {
     // setInterval(() => oninput(gEBI("page_text")), 1000);
-    aEL(gEBI("page_text"), "keyup", () => oninput(gEBI("page_text")));
+    aEL(gEBI("page_text"), "keyup", () => page_text_oninput(gEBI("page_text")));
 });
 
 function sidebar_reposition() {
     var e = gEBI("sidebar");
-    // 3 + 2 + 2 = 7em = 112px
-    if (document.body.clientHeight < e.clientHeight + 112) {
+    if (document.body.clientHeight < e.clientHeight + 112) { // 3 + 2 + 2 = 7em = 112px
         e.style.top = "5em";
         e.style.bottom = "";
     } else {
@@ -22,7 +24,7 @@ function sidebar_reposition() {
     }
 }
 
-function oninput(e) {
+function page_text_oninput(e) {
     if (PAGE_TEXT == e.innerText)
         return;
     var chr = (window.getSelection().focusNode.nodeValue || "").slice(-1).charCodeAt(0);
@@ -33,13 +35,11 @@ function oninput(e) {
 
     var caret = document.createTextNode("__CARET__");
     window.getSelection().getRangeAt(0).insertNode(caret);
-
-    var text = model1(e.innerText);
+    page_text_detect(e);
     var range = document.createRange();
-    e.innerHTML = text;
+    var selection = window.getSelection();
     caret = gEBI("__CARET__");
     range.selectNode(caret);
-    var selection = window.getSelection();
     selection.removeAllRanges();
     selection.addRange(range);
     range.deleteContents();
@@ -47,26 +47,31 @@ function oninput(e) {
     PAGE_TEXT = e.innerText;
 }
 
-function model1(text) {
+function page_text_detect(e) {
+    var text = e.innerText;
     var words = text.split(" ");
-    for (let i = 0; i < words.length; i++) {
+    for (let i in words) {
         let word = words[i];
-        let tag = false;
         let pos = word.indexOf("__CARET__");
+        let tag = false;
         if (pos != -1)
             word = word.replace("__CARET__", "");
-        if (word == "abc")
+        if (word in DICT) // TODO
             tag = true;
         if (pos != -1)
             word = word.slice(0, pos) + "__CARET__" + word.slice(pos);
-        if (tag)
-            word = "<span class='highlight'>" + word + "</span>";
+        if (tag == true)
+            word = "<span class='highlight' onclick='page_text_bubble(this);'>" + word + "</span>";
         if (word != words[i])
             words[i] = word;
     }
     text = words.join(" ");
     text = text.replace("__CARET__", "<span id='__CARET__'></span>");
-    return text;
+    e.innerHTML = text;
+}
+
+function page_text_bubble(e) {
+    gEBI("bubble_text").innerText = e.innerText + "는 틀린 것 같아. 다시 해볼까?";
 }
 
 /*

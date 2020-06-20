@@ -26,8 +26,6 @@ div#header {
 div#content_wrapper {
     background-image: url("../img/content.bg.jpg");
     /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
-    height: 100%;
-    overflow: hidden;
     padding: 2em;
 }
 
@@ -87,9 +85,9 @@ div#bubble_text {
     overflow-y: auto;
 }
 
-div#bubble::-webkit-scrollbar { width: 1em; }
-div#bubble::-webkit-scrollbar-thumb { background-color: #DCD; }
-div#bubble::-webkit-scrollbar-track { background-color: #EDE; }
+div#bubble_text::-webkit-scrollbar { width: 1em; }
+div#bubble_text::-webkit-scrollbar-thumb { background-color: #DCD; }
+div#bubble_text::-webkit-scrollbar-track { background-color: #EDE; }
 
 div#agent {
     background-image: url("../img/agent.dodo.png");
@@ -117,7 +115,6 @@ svg#agent_eyes {
     background-color: #FEF;
     border-radius: 1em;
     box-shadow: 0 0 4px #000;
-    display: inline-block;
     padding: 1em;
     position: relative;
 }
@@ -134,8 +131,17 @@ svg#agent_eyes {
 }
 
 .highlight {
-    animation: highlight_fadein 2s 1;
     background-color: #FF0;
     border-radius: 0.5em;
     padding-top: 0.3em;
+}
+
+.highlight:hover {
+    animation: highlight_blink 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes highlight_blink {
+    from { background-color: #FF0; }
+    50% { background-color: #CC0; }
 }
