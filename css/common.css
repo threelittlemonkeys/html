@@ -16,6 +16,10 @@ body {
     padding: 0;
 }
 
+div {
+    box-sizing: border-box;
+}
+
 div#header {
     background-color: #E36;
     color: #FFF;
@@ -35,24 +39,17 @@ div#content {
 }
 
 div#page_wrapper {
-    background-color: #FFE;
-    box-shadow: 0 0 4px #000;
-    box-sizing: border-box;
+    color: #000;
     display: inline-block;
-    padding: 0.7em 2em 1.7em;
+    font-family: Coming Soon, Hi Melody;
+    letter-spacing: 0.1em;
     width: 50em;
 }
 
-.page {
-    background-image: linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 100% 2.5em;
-    color: #000;
-    font-family: Coming Soon, Hi Melody;
-    font-size : 1.3em;
-    letter-spacing: 0.1em;
-    line-height: 2.5em;
-    outline: None;
-    padding-top: 0.3em;
+div#page {
+    background-color: #FFE;
+    box-shadow: 0 0 4px #000;
+    padding: 0.7em 2em 1.7em;
 }
 
 div#page_title {
@@ -67,6 +64,23 @@ div#page_date {
 
 div#page_text {
     min-height: 25em; /* 10 lines */
+}
+
+.page {
+    background-image: linear-gradient(to top, #000 1px, transparent 1px);
+    background-size: 100% 2.5em;
+    font-size : 1.3em;
+    line-height: 2.5em;
+    outline: None;
+    padding-top: 0.3em;
+}
+
+div#word_box {
+    background-color: #FFE;
+    box-shadow: 0 0 4px #000;
+    font-size : 1.3em;
+    margin-top: 2em;
+    padding: 1.5em;
 }
 
 div#sidebar {
@@ -143,5 +157,5 @@ svg#agent_eyes {
 
 @keyframes highlight_blink {
     from { background-color: #FF0; }
-    50% { background-color: #CC0; }
+    50% { background-color: #FC0; }
 }

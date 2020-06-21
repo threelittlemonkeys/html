@@ -3,14 +3,14 @@ var PAGE_DATE = "";
 var PAGE_TEXT = "";
 
 var DICT = Array();
-DICT = {"abc": undefined, "abcdef": undefined}; // TODO
+DICT = {"xxx": undefined, "yyy": undefined}; // TODO
 
 aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
 aEL(document, "DOMContentLoaded", () => {
-    // setInterval(() => oninput(gEBI("page_text")), 1000);
     aEL(gEBI("page_text"), "keyup", () => page_text_oninput(gEBI("page_text")));
+    // setInterval(() => oninput(gEBI("page_text")), 1000);
 });
 
 function sidebar_reposition() {
