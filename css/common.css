@@ -9,6 +9,8 @@ html {
 }
 
 body {
+    background-image: url("../img/content.bg.jpg");
+    /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
     font-family: Noto Sans KR;
     font-size: 16px; /* 1em */
     height: 100%;
@@ -24,82 +26,92 @@ div#header {
     background-color: #E36;
     color: #FFF;
     line-height: 100%;
-    padding: 1em;
+    padding: 16px;
 }
 
 div#content_wrapper {
-    background-image: url("../img/content.bg.jpg");
-    /* https://www.freepik.com/free-vector/children-alphabet-seamless-pattern_6438631.htm */
-    padding: 2em;
+    padding: 32px;
 }
 
 div#content {
     display: inline-block;
-    width: 70em;
 }
 
 div#page_wrapper {
     color: #000;
-    display: inline-block;
     font-family: Coming Soon, Hi Melody;
-    letter-spacing: 0.1em;
-    width: 50em;
+    font-size : 21px;
+    letter-spacing: 1.5px;
+    width: 800px;
 }
 
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    padding: 0.7em 2em 1.7em;
-}
-
-div#page_title {
-    margin-bottom: -0.3em;
-    min-height: 2.5em;
-}
-
-div#page_date {
-    margin-bottom: -0.3em;
-    min-height: 2.5em;
-}
-
-div#page_text {
-    min-height: 25em; /* 10 lines */
+    padding: 16px 32px 32px;
 }
 
 .page {
     background-image: linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 100% 2.5em;
-    font-size : 1.3em;
-    line-height: 2.5em;
+    background-size: 100% 50px;
+    line-height: 50px;
     outline: None;
-    padding-top: 0.3em;
+    margin-top: -5px;
+    padding-top: 5px;
+}
+
+div#page_title {
+    min-height: 50px;
+}
+
+div#page_date {
+    min-height: 50px;
+}
+
+div#page_text {
+    min-height: 500px; /* 10 lines */
 }
 
 div#word_box {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    font-size : 1.3em;
-    margin-top: 2em;
-    padding: 1.5em;
+    margin-top: 32px;
+    padding: 32px;
 }
 
 div#sidebar {
-    left: 54em; /* 2em + 50em + 2em */
+    left: 864px; /* 32px + 800px + 32px */
     position: fixed;
-    width: 16em;
+    width: 236px;
 }
 
 div#bubble_wrapper {
-    margin-bottom: 2.5em;
+    background-color: #FEF;
+    border-radius: 16px;
+    box-shadow: 0 0 4px #000;
+    margin-bottom: 48px;
+    padding: 16px;
+    position: relative;
+}
+
+div#bubble_wrapper::after {
+    border: 16px solid #EEF;
+    bottom: -32px;
+    box-shadow: -2px 2px 2px #999;
+    content: "";
+    position: absolute;
+    right: 60px;
+    transform: rotate(-45deg);
+    transform-origin: 0 0;
 }
 
 div#bubble_text {
     line-height: 150%;
-    max-height: 20em;
+    max-height: 320px; 
     overflow-y: auto;
 }
 
-div#bubble_text::-webkit-scrollbar { width: 1em; }
+div#bubble_text::-webkit-scrollbar { width: 16px; }
 div#bubble_text::-webkit-scrollbar-thumb { background-color: #DCD; }
 div#bubble_text::-webkit-scrollbar-track { background-color: #EDE; }
 
@@ -110,7 +122,7 @@ div#agent {
     float: right;
     height: 180px;
     position: relative;
-    right: 0.5em;
+    right: 10px;
     width: 111px;
 }
 
@@ -125,29 +137,10 @@ svg#agent_eyes {
     to { transform: scaleY(1); }
 }
 
-.bubble {
-    background-color: #FEF;
-    border-radius: 1em;
-    box-shadow: 0 0 4px #000;
-    padding: 1em;
-    position: relative;
-}
-
-.bubble::after {
-    border: 0.7em solid #EEF;
-    bottom: -1.4em;
-    box-shadow: -2px 2px 2px #999;
-    content: "";
-    position: absolute;
-    right: 3.8em;
-    transform: rotate(-45deg);
-    transform-origin: 0 0;
-}
-
 .highlight {
-    background-color: #FF0;
-    border-radius: 0.5em;
-    padding-top: 0.3em;
+    background-color: #EE0;
+    border-radius: 16px;
+    padding-top: 6px;
 }
 
 .highlight:hover {
@@ -156,6 +149,6 @@ svg#agent_eyes {
 }
 
 @keyframes highlight_blink {
-    from { background-color: #FF0; }
-    50% { background-color: #FC0; }
+    from { background-color: #EE0; }
+    50% { background-color: #ED0; }
 }
