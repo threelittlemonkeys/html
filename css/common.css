@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Coming+Soon&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Hi+Melody&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
 
 html {
     height: 100%;
@@ -23,53 +25,47 @@ div {
 }
 
 div#header {
-    background-color: #E36;
+    background-color: #F36;
     color: #FFF;
     line-height: 100%;
     padding: 16px;
 }
 
-div#content_wrapper {
-    padding: 32px;
-}
-
-div#content {
-    display: inline-block;
+div#content{ /* width: 1100px */
+    padding: 32px 64px;
 }
 
 div#page_wrapper {
-    color: #000;
-    font-family: Coming Soon, Hi Melody;
-    font-size : 21px;
-    letter-spacing: 1.5px;
+    color: #333;
+    display: inline-block;
     width: 800px;
 }
 
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    padding: 16px 32px 32px;
-}
-
-.page {
-    background-image: linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 100% 50px;
-    line-height: 50px;
-    outline: None;
-    margin-top: -5px;
-    padding-top: 5px;
+    padding: 36px 32px;
 }
 
 div#page_title {
-    min-height: 50px;
-}
-
-div#page_date {
-    min-height: 50px;
+    font-family: Mystery Quest; /*Love Ya Like A Sister;*/
+    font-size: 40px;
+    letter-spacing: 2.4px;
+    line-height: 150%;
+    text-align: center;
 }
 
 div#page_text {
+    background-image: linear-gradient(to top, #000 1px, transparent 1px);
+    background-size: 100% 50px;
+    font-family: Coming Soon, Hi Melody;
+    font-size : 21px;
+    letter-spacing: 1.6px;
+    line-height: 50px;
+    margin-top: 11px;
+    outline: None;
     min-height: 500px; /* 10 lines */
+    padding-top: 5px;
 }
 
 div#word_box {
@@ -111,7 +107,7 @@ div#bubble_text {
     overflow-y: auto;
 }
 
-div#bubble_text::-webkit-scrollbar { width: 16px; }
+div#bubble_text::-webkit-scrollbar { width: 12px; }
 div#bubble_text::-webkit-scrollbar-thumb { background-color: #DCD; }
 div#bubble_text::-webkit-scrollbar-track { background-color: #EDE; }
 
@@ -138,8 +134,8 @@ svg#agent_eyes {
 }
 
 .highlight {
-    background-color: #EE0;
-    border-radius: 16px;
+    background-color: #FF0;
+    border-radius: 8px;
     padding-top: 6px;
 }
 
@@ -149,6 +145,6 @@ svg#agent_eyes {
 }
 
 @keyframes highlight_blink {
-    from { background-color: #EE0; }
-    50% { background-color: #ED0; }
+    from { background-color: #FF0; }
+    50% { background-color: #FC3; }
 }
