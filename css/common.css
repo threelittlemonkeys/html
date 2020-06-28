@@ -1,9 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Coming+Soon&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Hi+Melody&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap');
-
 html {
     height: 100%;
     margin: 0;
@@ -31,8 +25,8 @@ div#header {
     padding: 16px;
 }
 
-div#content{ /* width: 1100px */
-    padding: 32px 64px;
+div#content{ /* width: 32 + 800 + 32 + 236 = 1100px */
+    padding: 32px;
 }
 
 div#page_wrapper {
@@ -76,7 +70,7 @@ div#word_box {
 }
 
 div#sidebar {
-    left: 864px; /* 32px + 800px + 32px */
+    left: 864px; /* 32 + 800 + 32 */
     position: fixed;
     width: 236px;
 }
@@ -134,7 +128,7 @@ svg#agent_eyes {
 }
 
 .highlight {
-    background-color: #FF0;
+    background-color: #EE0;
     border-radius: 8px;
     padding-top: 6px;
 }
@@ -145,6 +139,6 @@ svg#agent_eyes {
 }
 
 @keyframes highlight_blink {
-    from { background-color: #FF0; }
+    from { background-color: #EE0; }
     50% { background-color: #FC3; }
 }
