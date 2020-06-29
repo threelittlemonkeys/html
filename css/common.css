@@ -42,9 +42,9 @@ div#page {
 }
 
 div#page_title {
-    font-family: Mystery Quest; /*Love Ya Like A Sister;*/
+    font-family: Patrick Hand; /* Mystery Quest */
     font-size: 40px;
-    letter-spacing: 3.2px;
+    letter-spacing: 1.6px;
     line-height: 150%;
     text-align: center;
 }
@@ -52,7 +52,7 @@ div#page_title {
 div#page_text {
     background-image: linear-gradient(to top, #000 1px, transparent 1px);
     background-size: 100% 50px;
-    font-family: Coming Soon, Hi Melody;
+    font-family: Coming Soon, Ain Mom;
     font-size : 21px;
     letter-spacing: 1.6px;
     line-height: 50px;
