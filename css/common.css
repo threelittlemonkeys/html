@@ -38,13 +38,13 @@ div#page_wrapper {
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    padding: 36px 32px;
+    padding: 32px;
 }
 
 div#page_title {
     font-family: Mystery Quest; /*Love Ya Like A Sister;*/
     font-size: 40px;
-    letter-spacing: 2.4px;
+    letter-spacing: 3.2px;
     line-height: 150%;
     text-align: center;
 }
@@ -97,7 +97,7 @@ div#bubble_wrapper::after {
 
 div#bubble_text {
     line-height: 150%;
-    max-height: 320px; 
+    max-height: 320px;
     overflow-y: auto;
 }
 
@@ -130,7 +130,7 @@ svg#agent_eyes {
 .highlight {
     background-color: #EE0;
     border-radius: 8px;
-    padding-top: 6px;
+    padding-top: 7px;
 }
 
 .highlight:hover {
@@ -140,5 +140,5 @@ svg#agent_eyes {
 
 @keyframes highlight_blink {
     from { background-color: #EE0; }
-    50% { background-color: #FC3; }
+    50% { background-color: #EC3; }
 }

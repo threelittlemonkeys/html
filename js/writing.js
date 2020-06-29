@@ -3,7 +3,7 @@ var PAGE_DATE = "";
 var PAGE_TEXT = "";
 
 var DICT = Array();
-DICT = {"xxx": undefined, "XXXYYY": undefined}; // TODO
+DICT = {"tom": undefined, "george": undefined}; // TODO
 
 aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
