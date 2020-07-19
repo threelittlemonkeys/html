@@ -3,7 +3,7 @@ var PAGE_DATE = "";
 var PAGE_TEXT = "";
 
 var DICT = Array();
-DICT = {"tom": undefined, "george": undefined}; // TODO
+DICT = {"Tom": undefined, "George": undefined}; // TODO
 
 aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
@@ -15,12 +15,12 @@ aEL(document, "DOMContentLoaded", () => {
 
 function sidebar_reposition() {
     var e = gEBI("sidebar");
-    if (document.body.clientHeight < e.clientHeight + 112) { // 3 + 2 + 2 = 7em = 112px
-        e.style.top = "5em";
+    if (document.body.clientHeight < e.clientHeight + 112) { // 48 + 32 + 32
+        e.style.top = "80px";
         e.style.bottom = "";
     } else {
         e.style.top = "";
-        e.style.bottom = "2em";
+        e.style.bottom = "32px";
     }
 }
 
