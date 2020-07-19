@@ -69,13 +69,6 @@ div#page_text {
     padding-top: 8px;
 }
 
-div#word_box {
-    background-color: #FFE;
-    box-shadow: 0 0 4px #000;
-    margin-top: 32px;
-    padding: 32px;
-}
-
 div#sidebar {
     left: 864px; /* 32 + 800 + 32 */
     position: fixed;
