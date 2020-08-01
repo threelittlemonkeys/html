@@ -8,10 +8,11 @@ DICT = {"Tom": undefined, "George": undefined}; // TODO
 aEL(window, "load", sidebar_reposition);
 aEL(window, "resize", sidebar_reposition);
 
+/*
 aEL(document, "DOMContentLoaded", () => {
-    aEL(gEBI("page_text"), "keyup", () => page_text_oninput(gEBI("page_text")));
-    // setInterval(() => oninput(gEBI("page_text")), 1000);
+    aEL(gEBI("page_text"), "keyup", () => on_essay_input(gEBI("page_text")));
 });
+*/
 
 function sidebar_reposition() {
     var e = gEBI("sidebar");
@@ -24,7 +25,7 @@ function sidebar_reposition() {
     }
 }
 
-function page_text_oninput(e) {
+function on_essay_input(e) {
     if (PAGE_TEXT == e.innerText)
         return;
     var chr = (window.getSelection().focusNode.nodeValue || "").slice(-1).charCodeAt(0);
