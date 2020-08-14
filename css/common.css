@@ -38,41 +38,40 @@ div#page_wrapper {
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    letter-spacing: 1.6px;
-    padding: 32px;
+    letter-spacing: 1px;
+    padding: 48px 32px;
 }
 
 div#page_title {
-    font-family: Comic Neue, Patrick Hand;
+    font-family: Quicksand;
     font-size: 40px;
     line-height: 100%;
+    margin-bottom: 48px;
     text-align: center;
 }
 
 div#page_direction {
     border: 1px dashed #000;
-    font-family: Comic Neue, Patrick Hand;
+    font-family: Quicksand;
     font-size : 24px;
-    letter-spacing: 0.8px;
+    letter-spacing: 0;
     line-height: 150%;
-    margin-top: 32px;
-    padding: 8px 16px;
+    margin-bottom: 48px;
+    padding: 12px 16px;
 }
 
 div#page_text_cloze {
     font-family: Coming Soon, Ain Mom;
     font-size : 21px;
     line-height: 50px;
-    margin-top: 16px;
 }
 
 div#page_text_cloze > div {
-    background-image: linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 100% 50px;
     border-bottom: 1px solid #000;
     display: inline-block;
-    height: 41px;
+    height: 50px;
     outline: none;
+    padding-top: 8px;
     min-width: 160px;
 }
 
@@ -82,7 +81,6 @@ div#page_text_essay {
     font-family: Coming Soon, Ain Mom;
     font-size : 21px;
     line-height: 50px;
-    margin-top: 8px;
     min-height: 500px; /* 10 lines */
     outline: None;
     padding-top: 8px;
