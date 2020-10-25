@@ -14,24 +14,20 @@ body {
     padding: 0;
 }
 
-div {
-    box-sizing: border-box;
-}
-
 div#header {
     background-color: #F36;
     color: #FFF;
     font-weight: 300;
     line-height: 100%;
-    padding: 16px;
+    padding: 1em;
 }
 
-div#content{ /* width: 32 + 800 + 32 + 236 = 1100px */
-    padding: 32px;
+div#content { /* width: 32 + 800 + 32 + 236 = 1100px */
+    color: #000;
+    padding: 2em;
 }
 
 div#page_wrapper {
-    color: #000;
     display: inline-block;
     width: 800px;
 }
@@ -39,52 +35,54 @@ div#page_wrapper {
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    letter-spacing: 1px;
-    padding: 48px 32px;
+    padding: 2em;
 }
 
 div#page_title {
     font-family: Roboto;
-    font-size: 40px;
-    line-height: 100%;
-    margin-bottom: 40px;
+    font-size: 2.5em; /* 40px */
+    letter-spacing: 2px;
+    line-height: 200%;
+    margin-bottom: 0.8em; /* 32px */
     text-align: center;
 }
 
 div#page_prompt {
     border: 1px dashed #000;
     font-family: Roboto;
-    font-size : 21px;
+    font-size : 1.25em;
     letter-spacing: 0.5px;
-    line-height: 150%;
-    margin-bottom: 40px;
-    padding: 12px 16px;
+    line-height: 180%;
+    margin-bottom: 1.6em; /* 32px */
+    padding: 0.8em; /* 16px */
 }
 
 div#page_text_cloze {
     font-family: Coming Soon, Ain Mom;
-    font-size : 21px;
-    line-height: 50px;
+    font-size : 1.25em; /* 20px */
+    letter-spacing: 1.5px;
+    line-height: 2.5em; /* 50px */
 }
 
 div#page_text_cloze > div {
-    border-bottom: 1px solid #000;
+    background-image: linear-gradient(to top, #000 1px, transparent 1px);
+    background-position-y: -0.4em; /* -8px */
     display: inline-block;
-    height: 50px;
+    height: 2.5em;
     outline: none;
-    padding-top: 8px;
     min-width: 160px;
 }
 
 div#page_text_essay {
     background-image: linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 100% 50px;
+    background-position-y: -0.4em; /* -8px */
+    background-size: 100% 2.5em;
     font-family: Coming Soon, Ain Mom;
-    font-size : 21px;
-    line-height: 50px;
-    min-height: 500px; /* 10 lines */
+    font-size : 1.25em; /* 20 px */
+    letter-spacing: 1.5px;
+    line-height: 2.5em; /* 50px */
+    min-height: 25em; /* 10 lines */
     outline: None;
-    padding-top: 8px;
 }
 
 div#sidebar {
