@@ -35,7 +35,7 @@ div#page_wrapper {
 div#page {
     background-color: #FFE;
     box-shadow: 0 0 4px #000;
-    padding: 2em;
+    padding: 2em 3em;
 }
 
 div#page_title {
