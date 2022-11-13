@@ -54,7 +54,7 @@ div#page_prompt {
     letter-spacing: 0.5px;
     line-height: 180%;
     margin-bottom: 1.6em; /* 32px */
-    padding: 0.8em; /* 16px */
+    padding: 0.6em 0.8em; /* 16px */
 }
 
 div#page_text_cloze {
