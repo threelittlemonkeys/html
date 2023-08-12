@@ -14,3 +14,7 @@ body {
     color: #FFF;
     font-size: 1em;
 }
+
+#content {
+    margin: 1em;
+}
