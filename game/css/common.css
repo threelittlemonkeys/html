@@ -6,7 +6,7 @@ html, body {
     -webkit-text-size-adjust: none;
 }
 
-@media screen and (orientation: landscape) {
+@media (orientation: landscape) {
   html {
     transform: rotate(-90deg);
     transform-origin: left top;
